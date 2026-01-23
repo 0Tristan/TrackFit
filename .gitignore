@@ -19,8 +19,21 @@ build/
 .vite/
 
 # React Native
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
 # Metro
 .metro-health-check*
+
+# generated native folders
+/ios
+/android
 
 # Android
 android/.gradle/
@@ -38,14 +51,28 @@ ios/*.xcworkspace
 ios/*.xcodeproj/project.xcworkspace/
 ios/.xcode.env.local
 
-# Expo (si utilisé)
+# Expo
 .expo/
+dist/
+expo-env.d.ts
 .expo-shared/
 web-build/
+
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 
 # IDE / OS
 .vscode/
 .idea/
+*.pem
 *.swp
 *.swo
 .DS_Store
