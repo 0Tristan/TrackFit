@@ -59,3 +59,4 @@ coverage/
 
 # Database
 services/database/data_preprod/
+docs/
