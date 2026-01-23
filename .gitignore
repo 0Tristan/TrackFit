@@ -1,0 +1,61 @@
+# Node / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.env
+.env.local
+.env.*.local
+
+# Build / Bundlers
+dist/
+build/
+.vite/
+.cache/
+
+# Vite
+.vite/
+
+# React Native
+# Metro
+.metro-health-check*
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+android/*.iml
+
+# iOS
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/*.xcodeproj/project.xcworkspace/
+ios/.xcode.env.local
+
+# Expo (si utilisé)
+.expo/
+.expo-shared/
+web-build/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Tests / Coverage
+coverage/
+
+# Misc
+*.log
+
+# Database
+services/database/data_preprod/

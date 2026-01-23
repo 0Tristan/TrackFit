@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql:latest
+    container_name: db_trackfit_preprod
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PREPROD_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_PREPROD_DATABASE}
+      MYSQL_USER: ${MYSQL_PREPROD_USER}
+      MYSQL_PASSWORD: ${MYSQL_PREPROD_USER_PASSWORD}
+    volumes:
+      - ./services/database/data_preprod:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_trackfit_preprod
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PREPROD_ROOT_PASSWORD}
+    ports:
+      - "8080:80"
+
+  api:
+    build: ./services/api
+    env_file: .env
+    container_name: api_trackfit_preprod
+    volumes:
+      - ./services/api:/src
+      - /src/node_modules
+    ports:
+      - "3001:3000"
+    command: npm run dev
+    depends_on:
+      - db
+
+  web:
+    build: ./services/web
+    container_name: web_trackfit_preprod
+    volumes:
+      - ./services/web:/app:cached
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: npm run dev
+    depends_on:
+      - api
