@@ -1,6 +1,8 @@
-import './styles/login.scss'
+import './styles/login.scss';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
   return (
     <>
       <div className='container'>
@@ -15,7 +17,7 @@ function App() {
           <div className='lost-password'>
             <a href="">Mot de passe oublié ?</a>
           </div>
-          <button>Se connecter</button>
+          <button onClick={() => navigate("login/acceuil")}>Se connecter</button>
         </div>
         <div className='footer'>
           <p>Pas encore de compte ?</p>
