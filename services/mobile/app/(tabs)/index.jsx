@@ -4,10 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import InfoDate from "../components/InfoDate"
 import NavBar from "../components/NavBar"
-import ProgressBars from "../components/ProgressBars"
+import ProgressBarsKcal from "../components/ProgressBarsKcal"
+import ProgressBarsMeal from "../components/ProgressBarsMeal"
+import ProgressBarsLitre from "../components/ProgressBarsLitre"
 import AddMeal from "../components/AddMeal"
-
-// Composant de la page principal
 
 const HomeScreen = () => {
   return (
@@ -15,12 +15,15 @@ const HomeScreen = () => {
           <NavBar />
           <InfoDate />
           <View style = {style.progressContainer}>
-            <ProgressBars />
+            <View style = {style.singleProgressBars}>
+                <ProgressBarsKcal />
+            </View>
                 <View style = {style.progressBars}>
-                    <ProgressBars />
-                    <ProgressBars />
+                    <ProgressBarsMeal />
+                    <ProgressBarsLitre />
                 </View>
           </View>
+          <AddMeal />
       </View>
   )
 };
@@ -31,19 +34,27 @@ const style = StyleSheet.create({
             display: 'flex',
             backgroundColor: 'black',
             flex: 1,
+            color: '141319'
         },
         progressContainer: {
             display: 'flex',
             marginTop: '150',
             alignContent: 'center',
+            color: 'fff'
         },
+
+        singleProgressBars: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+        },
+
         progressBars: {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
-            marginTop: '175'
+            marginTop: '145'
         }
     })
 
 export default HomeScreen;
-
