@@ -10,7 +10,7 @@ const NavBar = () => {
                     <View style = {style.leftNavContent}>
                             <View style = {style.strikeIndicator}>
                                 <Image source={require('../src/images/strike.png')} />
-                                <Text style={{color: '#FFFFFF'}}>12</Text>
+                                <Text style={{color: '#FFFFFF'}}>0</Text>
                             </View>
                         <Image source={require('../src/images/settings.png')} style = {{width: 22, height: 22}} />
                     </View>

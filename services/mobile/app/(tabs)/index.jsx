@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {StyleSheet, Text, View, Image, Button} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,8 +8,11 @@ import ProgressBarsKcal from "../components/ProgressBarsKcal"
 import ProgressBarsMeal from "../components/ProgressBarsMeal"
 import ProgressBarsLitre from "../components/ProgressBarsLitre"
 import AddMeal from "../components/AddMeal"
+import AddComment from "../components/AddComment"
 
 const HomeScreen = () => {
+    const [progress, setProgress] = useState(-100);
+
   return (
       <View style = {style.container}>
           <NavBar />
@@ -23,7 +26,7 @@ const HomeScreen = () => {
                     <ProgressBarsLitre />
                 </View>
           </View>
-          <AddMeal />
+          <AddComment />
       </View>
   )
 };

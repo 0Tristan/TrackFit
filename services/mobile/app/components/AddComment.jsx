@@ -3,11 +3,11 @@ import {StyleSheet, View, Image, Button} from 'react-native';
 import { MultiArcCircle } from 'react-native-circles';
 import {Text} from 'react-native';
 
-export default function AddMeal() {
+export default function AddComment() {
   return (
       <View style = {style.container} >
           <View style = {style.containerButton} >
-              <Button style = {style.button} title="Ajouter un repas" />
+              <Button style = {style.button} title="Ajouter un commentaire"/>
               <Image style = {style.images} source={require('../src/images/plus.png')}/>
           </View>
       </View>
