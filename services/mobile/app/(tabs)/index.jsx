@@ -3,19 +3,20 @@ import {StyleSheet, Text, View, Image, Button} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import InfoDate from "../components/InfoDate"
-import NavBar from "../components/NavBar"
+import NavBarTop from "../components/NavBarTop"
 import ProgressBarsKcal from "../components/ProgressBarsKcal"
 import ProgressBarsMeal from "../components/ProgressBarsMeal"
 import ProgressBarsLitre from "../components/ProgressBarsLitre"
 import AddMeal from "../components/AddMeal"
 import AddComment from "../components/AddComment"
+import NavBar from "../components/NavBar"
 
 const HomeScreen = () => {
     const [progress, setProgress] = useState(-100);
 
   return (
       <View style = {style.container}>
-          <NavBar />
+          <NavBarTop />
           <InfoDate />
           <View style = {style.progressContainer}>
             <View style = {style.singleProgressBars}>
@@ -27,6 +28,7 @@ const HomeScreen = () => {
                 </View>
           </View>
           <AddComment />
+          <NavBar />
       </View>
   )
 };
